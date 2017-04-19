@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="styles1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet " href="
+        https: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <script src="client.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="head">
+        
+            <h4>Holler!!!</h4>
+            <div class="user text-center" id="dname"></div>
+            <a href="http://codepen.io/learningcode9/full/mmeyBW/" <button type="button" class="btn btn-success logout" id="logout">Logout</button></a>
+        </div>
+        <div class="content">
+            <div class="online">
+                <p id="people">PEOPLE</p>
+            </div>
+
+            <div class="nav navbar-nav">
+                <div class="sidediv1">
+                    <h4 id="conversations">ALL CONVERSATIONS</h4>
+                    <div id="privateChat" class="privateChat">
+
+                    </div>
+                </div>
+            </div>
+            <div class="chatbox">
+                <div class="chatlogs" id="test">
+                    <div class="chatmessage" id="test1">
+                        {{{block1}}}
+                    </div>
+                </div>
+            </div>
+            <form action="/dummy" id="chatform">
+                <div class="chat-form">
+                    <div class="inputimage"><img src="https://avatars0.githubusercontent.com/u/694779?v=3&s=88">
+                    </div>
+                    <input type="text" placeholder="Click here to type a chat message." autofocus class="enter" id="msg" name="{{user}}" />
+
+
+                    <button><i class="fa fa-weixin"></i></button>
+            </form>
+            </div>
+        </div>
+        <span id="user" class="dontdisplay">{{user}}</span>
+    </div>
+</body>
+
+</html>

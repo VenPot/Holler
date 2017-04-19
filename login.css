@@ -1,0 +1,35 @@
+.container {
+	margin-top: 70px;
+}
+
+.form-signin {
+	max-width: 380px;
+	padding: 15px 35px 45px;
+	margin: auto;
+	background-color: white;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+}
+
+.form-signin-heading,
+.checkbox {
+	margin-bottom: 20px;
+}
+
+.form-control {
+	position: relative;
+	font-size: 16px;
+	height: auto;
+	padding: 10px;
+}
+
+input[type="text"] {
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+input[type="password"] {
+	margin-bottom: 20px;
+	border-radius: 5px;
+	
+}
