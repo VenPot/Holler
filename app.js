@@ -1,8 +1,8 @@
 var http = require('http')
 var fs = require('fs')
 var handlebars = require("handlebars")
-var chatdb = require('./chatdb.1.js')
-var gm = require('./gm.js')
+var chatdb = require('./JS/chatdb.js')
+var gm = require('./JS/getMessages.js')
 var qs = require('querystring')
 var myServer = {
   counter: 0,
@@ -40,8 +40,8 @@ var server = http.createServer(function(req, res) {
   console.log(req.url)
 
   switch (req.url) {
-    case '/styles1.css':
-      myServer.filename = __dirname + '/styles1.css'
+    case '/styles.css':
+      myServer.filename = __dirname + '/CSS/styles.css'
       console.log(myServer.filename)
       res.writeHead(200, {
         'Content-Type': 'text/css'
@@ -49,7 +49,7 @@ var server = http.createServer(function(req, res) {
       fs.createReadStream(myServer.filename, 'utf8').pipe(res)
       break
     case '/login.css':
-      myServer.filename = __dirname + '/login.css'
+      myServer.filename = __dirname + '/CSS/login.css'
       console.log(myServer.filename)
       res.writeHead(200, {
         'Content-Type': 'text/css'
@@ -58,7 +58,7 @@ var server = http.createServer(function(req, res) {
       break
 
     case '/client.js':
-      myServer.filename = __dirname + '/client.js'
+      myServer.filename = __dirname + '/JS/client.js'
       console.log(myServer.filename)
       res.writeHead(200, {
         'Content-Type': 'application/javascript'
@@ -66,7 +66,7 @@ var server = http.createServer(function(req, res) {
       fs.createReadStream(myServer.filename, 'utf8').pipe(res)
       break
     case '/welcome.js':
-      myServer.filename = __dirname + '/welcome.js'
+      myServer.filename = __dirname + '/JS/welcome.js'
       console.log(myServer.filename)
       res.writeHead(200, {
         'Content-Type': 'application/javascript'
@@ -78,7 +78,7 @@ var server = http.createServer(function(req, res) {
     case '/dummy':
       break
     case '/':
-      myServer.filename = __dirname + '/login.html'
+      myServer.filename = __dirname + '/HTML/login.html'
       console.log(myServer.filename)
       res.writeHead(200, {
         'Content-Type': 'text/html'
@@ -100,7 +100,7 @@ var server = http.createServer(function(req, res) {
           myServer.pchats['login'].splice(index, 1)
           chatdb.saveChat(myServer.messages)
           chatdb.savePrivateChat(myServer.pchats)
-          var d = fs.readFileSync(__dirname + '/login.html', 'utf8')
+          var d = fs.readFileSync(__dirname + '/HTML/login.html', 'utf8')
           res.end(d)
         }
         console.log('body is ', myServer.parsedBody)
@@ -169,7 +169,7 @@ function displayForm(res, user) {
   for (var i = 0; i < myServer.messages.length; i++) {
     block1 = block1 + '<div class="colors"><img src="https://avatars0.githubusercontent.com/u/694779?v=3&s=88"><div id="first">' + myServer.messages[i][0] + '</div>&nbsp&nbsp<div id="second">' + myServer.messages[i][2] + '</div>&nbsp&nbsp&nbsp&nbsp&nbsp<div id="third">' + myServer.messages[i][1] + '</div></div><br>'
   }
-  myServer.filename = __dirname + '/main.html'
+  myServer.filename = __dirname + '/HTML/main.html'
   source = fs.readFileSync(myServer.filename, 'utf-8')
 
   var template = handlebars.compile(source)
