@@ -87,7 +87,7 @@ $(document).ready(function() {
 
   $('#privateChat').on('click', '.sample', function() {
     mode = $(this).attr('id')
-    if (mode != 'messages') {
+    if (mode == 'messages') {
       document.title = 'Public Room'
     }
     else {
@@ -247,9 +247,6 @@ $(document).ready(function() {
         if (mode != name) {
           $(jqname).addClass("btn-warning")
           $(circelContent).html(mySpace.nchats[name])
-
-
-
         }
         else mySpace.nchats[name] = 0
 
