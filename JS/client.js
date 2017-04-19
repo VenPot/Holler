@@ -87,6 +87,12 @@ $(document).ready(function() {
 
   $('#privateChat').on('click', '.sample', function() {
     mode = $(this).attr('id')
+    if (mode != 'messages') {
+      document.title = 'Public Room'
+    }
+    else {
+      document.title = mode
+    }
     mySpace.nchats[mode] = 0
       //console.log('logged in mode is', mode)
       // console.log('pid is', $(this).parent().attr('id'))
@@ -182,9 +188,14 @@ $(document).ready(function() {
       }
 
     }
-    mySpace.preactive = active
-    if (block3 != '') $('#privateChat').append(block3)
 
+    mySpace.preactive = active
+
+
+    if (block3 != '') {
+      $('#privateChat').append(block3)
+      $('#messages').children('li').html(`<img src="https://avatars0.githubusercontent.com/u/694779?v=3&s=88" class="imageicon">Public Room`)
+    }
 
   }
 
@@ -236,6 +247,8 @@ $(document).ready(function() {
         if (mode != name) {
           $(jqname).addClass("btn-warning")
           $(circelContent).html(mySpace.nchats[name])
+
+
 
         }
         else mySpace.nchats[name] = 0
