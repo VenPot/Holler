@@ -1,9 +1,8 @@
 # Holler
 ## Holler is a fast , minimal &amp; unopiniated Gitter style web chat ##
-
- *It includes notifications and unread messages count
- *Built on nodejs and mongodb
- *feel free to reuse the code under the MIT license
+ * It includes notifications and unread messages count
+ * Built on nodejs and mongodb
+ * feel free to reuse the code under the MIT license
   
 ### Found and issue? - Please raise it in the issues section ###
 
